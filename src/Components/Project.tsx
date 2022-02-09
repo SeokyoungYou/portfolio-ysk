@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { Iproject } from "../ProjectData";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Wrapper = styled.div`
   height: 95%;
@@ -55,11 +58,8 @@ function Project({ project }: IProjectComponent) {
       </Thumbnail>
       <InfoWrapper>
         <Info>{project.releasedDate}</Info>
-        <Info>{project.releasedDate}</Info>
-        <Info>{project.releasedDate}</Info>
-        <Info>{project.releasedDate}</Info>
-        <Info>{project.releasedDate}</Info>
-        <Info>{project.releasedDate}</Info>
+        <FontAwesomeIcon icon={faCamera} size="xs" />
+
         <Btn>
           <a href={project.githubRepo} target="_blank">
             Code
