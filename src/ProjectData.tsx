@@ -6,7 +6,7 @@ export interface Ilecture {
 export interface Iproject {
   title: string;
   lecture: Ilecture;
-  releasedDate: string;
+  releaseDate: string;
   categories: string[];
   keyword?: string[];
   depolyedWebsite?: string;
@@ -49,14 +49,14 @@ export let reactMasterClass: Ilecture = {
 export let coinTracker: Iproject = {
   title: "Coin Tracker",
   lecture: reactMasterClass,
-  releasedDate: "2022-01",
+  releaseDate: "2022-01",
   categories: ["reactJS"],
   keyword: ["Data Fetching", "Data Visualization", "Routing", "Dark Mode"],
 };
 export let trelloClone: Iproject = {
   title: "Trello",
   lecture: reactMasterClass,
-  releasedDate: "2022-02",
+  releaseDate: "2022-02",
   categories: ["reactJS"],
   keyword: ["Form Validation", "Drag and Drop", "State Management"],
 };
@@ -64,7 +64,7 @@ export let trelloClone: Iproject = {
 export let nomflixClone: Iproject = {
   title: "Nomflix",
   lecture: reactMasterClass,
-  releasedDate: "2022-02",
+  releaseDate: "2022-02",
   categories: ["reactJS"],
   keyword: ["Animations", "Sliders", "Modals"],
   depolyedWebsite: "https://seokyoungyou.github.io/nomflix-clone",

@@ -8,12 +8,13 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 const Row = styled.div`
-  margin: 20px 0px;
-  width: 98%;
+  margin: 10px 0px;
+  width: 97%;
   height: 400px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  overflow: hidden;
+  gap: 20px;
   border-radius: 10px;
   align-items: center;
 `;
