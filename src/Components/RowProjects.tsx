@@ -3,18 +3,15 @@ import Project from "./Project";
 import { nomflixClone } from "../ProjectData";
 
 const Wrapper = styled.div`
-  width: 100vw;
-  display: flex;
-  justify-content: center;
+  width: 100%;
 `;
 const Row = styled.div`
-  margin: 10px 0px;
-  width: 97%;
-  height: 400px;
+  margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   overflow: hidden;
-  gap: 20px;
+  padding: 0px 15px;
+  gap: 15px;
   border-radius: 10px;
   align-items: center;
 `;
@@ -23,7 +20,6 @@ function RowProjects() {
     <>
       <Wrapper>
         <Row>
-          <Project project={nomflixClone} />
           <Project project={nomflixClone} />
           <Project project={nomflixClone} />
         </Row>
