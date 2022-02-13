@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Routes/Home";
+import ProjectScreen from "./Routes/Projects/ProjectScreen";
 
 // projectId string이 가능한가?
 function App() {
@@ -7,7 +8,10 @@ function App() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/profile"></Route>
-        <Route path={["/", "/:projectTitle"]}>
+        <Route path={["/projects", "/projects/:projectTitle"]}>
+          <ProjectScreen />
+        </Route>
+        <Route path={"/"}>
           <Home />
         </Route>
       </Switch>

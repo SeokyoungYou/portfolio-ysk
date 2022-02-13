@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faHtml5 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const CategoryIcons = styled(motion.div)`
   background-color: ${(props) => props.theme.backgroundColor.grey};
@@ -74,7 +75,15 @@ const CategoryScriptVariants = {
     },
   },
 };
-export function CategoryBar() {
+export interface ICategoryItem {
+  title: string;
+  icon: any;
+}
+export interface ICategoryBar {
+  items: ICategoryItem[];
+}
+export function CategoryBar({ items }: ICategoryBar) {
+  console.log(items);
   return (
     <>
       <CategoryIcons>
@@ -83,18 +92,15 @@ export function CategoryBar() {
           initial="initial"
           animate="animate"
         >
-          <Category>
-            <FontAwesomeIcon icon={faHtml5} size="4x" color="#1d1d1f" />
-            HTML
-          </Category>
-          <Category>
-            <FontAwesomeIcon icon={faHtml5} size="4x" color="#1d1d1f" />
-            HTML
-          </Category>
-          <Category>
-            <FontAwesomeIcon icon={faReact} size="4x" color="#1d1d1f" />
-            React
-          </Category>
+          {items?.map((items) => (
+            <Link to={`/projects/${items.title}`}>
+              <Category>
+                <FontAwesomeIcon icon={items.icon} size="4x" color="#1d1d1f" />
+                {items.title}
+              </Category>
+            </Link>
+          ))}
+          {/* Link Component */}
         </Categories>
       </CategoryIcons>
       <CategoryScript

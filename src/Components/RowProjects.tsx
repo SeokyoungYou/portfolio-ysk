@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Project from "./Project";
-import { nomflixClone } from "../ProjectData";
+import { netflixClone } from "../ProjectData";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -20,8 +20,8 @@ function RowProjects() {
     <>
       <Wrapper>
         <Row>
-          <Project project={nomflixClone} />
-          <Project project={nomflixClone} />
+          <Project project={netflixClone} />
+          <Project project={netflixClone} />
         </Row>
       </Wrapper>
     </>

@@ -26,16 +26,13 @@ function Nav() {
   return (
     <NavBar>
       <Item>
-        Home
-        <Link to={"/"} />
+        <Link to={"/"}>Home</Link>
       </Item>
       <Item>
-        Profile
-        <Link to={"/"} />
+        <Link to={"/projects"}>Projects</Link>
       </Item>
       <Item>
-        Projects
-        <Link to={"/"} />
+        <Link to={"/profile"}>Profile</Link>
       </Item>
     </NavBar>
   );
