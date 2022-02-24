@@ -11,6 +11,15 @@ import {
 import {} from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faHtml5 } from "@fortawesome/free-brands-svg-icons";
+import {
+  CategoryName,
+  coinTracker,
+  kakaoClone,
+  MomentumClone,
+  netflixClone,
+  trelloClone,
+  youtubeClone,
+} from "../../ProjectData";
 
 const Background = styled.div`
   background-color: ${(props) => props.theme.backgroundColor.white};
@@ -23,11 +32,11 @@ const Background = styled.div`
 function ProjectScreen() {
   const { items }: ICategoryBar = {
     items: [
-      { title: "Basics", icon: faStairs },
-      { title: "ReactJS", icon: faReact },
-      { title: "TypeScript", icon: faT },
-      { title: "Back-end", icon: faServer },
-      { title: "Publish", icon: faUpload },
+      { title: CategoryName.basics, icon: faStairs },
+      { title: CategoryName.reactJS, icon: faReact },
+      { title: CategoryName.typescript, icon: faT },
+      { title: CategoryName.backEnd, icon: faServer },
+      { title: CategoryName.publish, icon: faUpload },
     ],
   };
 
@@ -36,8 +45,9 @@ function ProjectScreen() {
       <Nav />
       <Background>
         <CategoryBar items={items} />
-        <RowProjects />
-        <RowProjects />
+        <RowProjects firstProject={netflixClone} secondProject={kakaoClone} />
+        <RowProjects firstProject={youtubeClone} secondProject={coinTracker} />
+        <RowProjects firstProject={MomentumClone} secondProject={trelloClone} />
       </Background>
     </>
   );

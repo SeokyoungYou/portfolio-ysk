@@ -39,8 +39,7 @@ const InfoWrapper = styled.div`
 const Infos = styled.div``;
 const Info = styled.div`
   display: flex;
-  margin-right: 50px;
-  margin-bottom: 5px;
+  margin: 15px 0px;
   height: 20px;
   align-items: center;
   text-align: center;
@@ -76,9 +75,11 @@ const Btn = styled.button`
   }
 `;
 const Category = styled.div`
-  padding: 3px 10px;
-  border-radius: 10px;
-  border: solid #5b6dcd 0.5px;
+  padding: 10px 13px;
+  border-radius: 20px;
+  background-color: ${(props) => props.theme.navColor};
+  color: ${(props) => props.theme.white.lighter};
+  /* border: solid ${(props) => props.theme.blue} 1.5px; */
   margin-right: 10px;
   margin-bottom: 10px;
 `;
@@ -133,6 +134,7 @@ function Project({ project }: IProjectComponent) {
               <InfoText key={keyword}>{keyword}</InfoText>
             ))}
           </Info>
+          <Info>API: data에 있으면...</Info>
           <Info>설명</Info>
         </Infos>
         <Btns>

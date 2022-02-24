@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Project from "./Project";
-import { netflixClone } from "../ProjectData";
+import { Iproject } from "../ProjectData";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -15,13 +15,17 @@ const Row = styled.div`
   border-radius: 10px;
   align-items: center;
 `;
-function RowProjects() {
+interface IRowProjectsComponent {
+  firstProject: Iproject;
+  secondProject: Iproject;
+}
+function RowProjects({ firstProject, secondProject }: IRowProjectsComponent) {
   return (
     <>
       <Wrapper>
         <Row>
-          <Project project={netflixClone} />
-          <Project project={netflixClone} />
+          <Project project={firstProject} />
+          <Project project={secondProject} />
         </Row>
       </Wrapper>
     </>

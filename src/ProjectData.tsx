@@ -47,7 +47,6 @@ export const Skills = {
       TypeScript: "TypeScript",
       Framework: {
         React: {
-          ReactJS: "ReactJS",
           package: {
             reactRouter: "React Router",
             recoil: "Recoil",
@@ -92,6 +91,13 @@ export const Skills = {
       Flutter: "Flutter",
     },
   },
+};
+export const CategoryName = {
+  basics: "Basics",
+  reactJS: "ReactJS",
+  typescript: "TypeScript",
+  backEnd: "Back-end",
+  publish: "Publish",
 };
 export interface Ilecture {
   lecture: string;
@@ -203,16 +209,16 @@ export let kakaoClone: Iproject = {
   title: "Kakao-Clone",
   lecture: kokoaClone,
   releaseDate: "2021-07",
-  categories: ["HTML", "CSS"],
-  keywords: ["Status Bar", "Screens", "Message Animations"],
-  depolyedWebsite: "https://seokyoungyou.github.io/nomflix-clone",
-  githubRepo: "https://github.com/SeokyoungYou/nomflix-clone",
+  categories: [CategoryName.basics],
+  keywords: ["HTML", "CSS", "Status Bar", "Screens", "Message Animations"],
+  depolyedWebsite: "https://seokyoungyou.github.io/antenna-messenger-2021",
+  githubRepo: "https://github.com/SeokyoungYou/antenna-messenger-2021",
 };
 export let MomentumClone: Iproject = {
   title: "Momentum-Clone",
   lecture: valinaJSChromeApp,
   releaseDate: "2022-01",
-  categories: ["reactJS"],
+  categories: [CategoryName.basics],
   keywords: [
     "JS Clock",
     "JS To Do List",
@@ -220,14 +226,14 @@ export let MomentumClone: Iproject = {
     "Get Weather Information",
     "Deploy to Github Pages",
   ],
-  depolyedWebsite: "https://seokyoungyou.github.io/nomflix-clone",
-  githubRepo: "https://github.com/SeokyoungYou/nomflix-clone",
+  depolyedWebsite: "https://seokyoungyou.github.io/daily-chrome-app-2021",
+  githubRepo: "https://github.com/SeokyoungYou/daily-chrome-app-2021",
 };
 export let youtubeClone: Iproject = {
   title: "Youtube-Clone",
   lecture: wetubeClone,
   releaseDate: "2022-01",
-  categories: ["reactJS"],
+  categories: [CategoryName.backEnd],
   keywords: [
     "User Authentication",
     "Video Upload & Record",
@@ -235,23 +241,24 @@ export let youtubeClone: Iproject = {
     "S3 Upload",
     "Mongo Atlas",
   ],
-  depolyedWebsite: "https://seokyoungyou.github.io/nomflix-clone",
-  githubRepo: "https://github.com/SeokyoungYou/nomflix-clone",
+  depolyedWebsite: "https://wetube-quartz.herokuapp.com/",
+  githubRepo: "https://github.com/SeokyoungYou/wetube-clone",
 };
 export let coinTracker: Iproject = {
   title: "Coin Tracker",
   lecture: reactMasterClass,
   releaseDate: "2022-01",
-  categories: ["reactJS"],
+  categories: [CategoryName.reactJS, CategoryName.typescript],
   keywords: ["Data Fetching", "Data Visualization", "Routing", "Dark Mode"],
-  depolyedWebsite: "https://seokyoungyou.github.io/nomflix-clone",
-  githubRepo: "https://github.com/SeokyoungYou/nomflix-clone",
+  depolyedWebsite:
+    "https://seokyoungyou.github.io/ReactJS-masterclass-cointracker",
+  githubRepo: "https://github.com/SeokyoungYou/ReactJS-masterclass-cointracker",
 };
 export let trelloClone: Iproject = {
   title: "Trello-Clone",
   lecture: reactMasterClass,
   releaseDate: "2022-02",
-  categories: ["reactJS"],
+  categories: [CategoryName.reactJS, CategoryName.typescript],
   keywords: ["Form Validation", "Drag and Drop", "State Management"],
   depolyedWebsite: "https://seokyoungyou.github.io/nomflix-clone",
   githubRepo: "https://github.com/SeokyoungYou/nomflix-clone",
@@ -261,7 +268,7 @@ export let netflixClone: Iproject = {
   title: "Netflix-Clone",
   lecture: reactMasterClass,
   releaseDate: "2022-02",
-  categories: ["reactJS", "API"],
+  categories: [CategoryName.reactJS, CategoryName.typescript],
   keywords: ["Animations", "Sliders", "Modals"],
   depolyedWebsite: "https://seokyoungyou.github.io/nomflix-clone",
   githubRepo: "https://github.com/SeokyoungYou/nomflix-clone",
