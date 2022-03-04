@@ -5,17 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 
 const Wrapper = styled(motion.div)`
-  height: 500px;
+  height: 100vh;
   margin: 10px 0px;
-  background-color: ${(props) => props.theme.backgroundColor.grey};
+  background-color: ${(props) => props.theme.white.lighter};
   border-radius: 15px;
   cursor: pointer;
-  &:first-child {
+  /* &:first-child {
     transform-origin: center left;
   }
   &:last-child {
     transform-origin: center right;
-  }
+  } */
 `;
 const Thumbnail = styled(motion.div)`
   height: 50%;
@@ -110,7 +110,7 @@ function Project({ project }: IProjectComponent) {
       <Thumbnail
         variants={ThumnailVariants}
         style={{
-          background: `linear-gradient(to top, rgba(0,0,0,0.5), transparent), url('${process.env.PUBLIC_URL}/Thumbnails/${project.title}.PNG')`,
+          background: `linear-gradient(to top, rgba(0,0,0,0.7), transparent), url('${process.env.PUBLIC_URL}/Thumbnails/${project.title}.PNG')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

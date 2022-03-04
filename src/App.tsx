@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Routes/Home";
-import ProjectScreen from "./Routes/Projects/ProjectScreen";
+import ProjectScreen from "./Routes/ProjectScreen";
 
 // projectId string이 가능한가?
 function App() {

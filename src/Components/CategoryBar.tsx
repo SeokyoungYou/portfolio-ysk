@@ -16,6 +16,7 @@ const CategoryIcons = styled(motion.div)`
 const Categories = styled(motion.div)`
   background-color: ${(props) => props.theme.backgroundColor.grey};
   height: 100px;
+  width: 100%;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -40,7 +41,7 @@ const CategoryScript = styled(motion.div)`
   height: 30px;
   font-size: 12px;
   transform-origin: top;
-  z-index: -1;
+  z-index: 0;
 `;
 const CategoriesVariants = {
   initial: {
@@ -83,7 +84,6 @@ export interface ICategoryBar {
   items: ICategoryItem[];
 }
 export function CategoryBar({ items }: ICategoryBar) {
-  console.log(items);
   return (
     <>
       <CategoryIcons>

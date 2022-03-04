@@ -99,6 +99,7 @@ export const CategoryName = {
   backEnd: "Back-end",
   publish: "Publish",
 };
+
 export interface Ilecture {
   lecture: string;
   theory: string[];
