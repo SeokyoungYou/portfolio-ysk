@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Iproject } from "../ProjectData";
-import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 
@@ -9,7 +9,6 @@ const Wrapper = styled(motion.div)`
   margin: 10px 0px;
   background-color: ${(props) => props.theme.white.lighter};
   border-radius: 15px;
-  cursor: pointer;
   /* &:first-child {
     transform-origin: center left;
   }
@@ -61,23 +60,18 @@ const Btns = styled.div`
   gap: 30px;
 `;
 const Btn = styled.button`
+  align-items: center;
+  justify-content: center;
   border-style: none;
   padding: 8px;
-  width: 100px;
-  color: ${(props) => props.theme.white.lighter};
-  border-radius: 5px;
-  background-color: ${(props) => props.theme.black.lighter};
-  :first-child {
-    background-color: ${(props) => props.theme.orange};
-  }
-  :last-child {
-    background-color: ${(props) => props.theme.blue};
-  }
+  width: 110px;
+  color: ${(props) => props.theme.blue};
+  background-color: ${(props) => props.theme.white.lighter};
 `;
 const Category = styled.div`
-  padding: 10px 13px;
+  padding: 8px 13px;
   border-radius: 20px;
-  background-color: ${(props) => props.theme.navColor};
+  background-color: ${(props) => props.theme.blue};
   color: ${(props) => props.theme.white.lighter};
   /* border: solid ${(props) => props.theme.blue} 1.5px; */
   margin-right: 10px;
@@ -140,17 +134,17 @@ function Project({ project }: IProjectComponent) {
         <Btns>
           <Btn>
             <a href={project.githubRepo} target="_blank">
-              Code
+              Code <FontAwesomeIcon icon={faAngleRight} />
             </a>
           </Btn>
           <Btn>
             <a href={project.depolyedWebsite} target="_blank">
-              ScreenShots
+              ScreenShots <FontAwesomeIcon icon={faAngleRight} />
             </a>
           </Btn>
           <Btn>
             <a href={project.depolyedWebsite} target="_blank">
-              Website
+              Website <FontAwesomeIcon icon={faAngleRight} />
             </a>
           </Btn>
         </Btns>

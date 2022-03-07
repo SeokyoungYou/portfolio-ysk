@@ -15,7 +15,7 @@ const CategoryIcons = styled(motion.div)`
 
 const Categories = styled(motion.div)`
   background-color: ${(props) => props.theme.backgroundColor.grey};
-  height: 100px;
+  height: 110px;
   width: 100%;
   padding: 0px 30px;
   display: flex;
@@ -25,6 +25,7 @@ const Categories = styled(motion.div)`
   z-index: 99;
 `;
 const Category = styled.div`
+  height: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,16 +39,16 @@ const CategoryScript = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
+  height: 20px;
   font-size: 12px;
   transform-origin: top;
   z-index: 0;
 `;
 
 const Circle = styled(motion.div)`
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 2.5px;
   background-color: ${(props) => props.theme.orange};
 `;
 const CategoriesVariants = {
@@ -86,6 +87,7 @@ const CategoryScriptVariants = {
 export interface ICategoryItem {
   title: string;
   icon: any;
+  routeMatch?: any;
 }
 export interface ICategoryBar {
   items: ICategoryItem[];
@@ -104,6 +106,7 @@ export function CategoryBar({ items }: ICategoryBar) {
               <Category>
                 <FontAwesomeIcon icon={items.icon} size="4x" color="#1d1d1f" />
                 {items.title}
+                {items.routeMatch?.isExact && <Circle layoutId="circle" />}
               </Category>
             </Link>
           ))}

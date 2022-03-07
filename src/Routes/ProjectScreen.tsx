@@ -8,6 +8,7 @@ import {
   faServer,
   faT,
   faDiagramProject,
+  faA,
 } from "@fortawesome/free-solid-svg-icons";
 import {} from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,15 +36,6 @@ const Background = styled.div`
 const ProjectWrapper = styled.div`
   padding: 30px;
 `;
-const { items }: ICategoryBar = {
-  items: [
-    { title: "All", icon: faDiagramProject },
-    { title: CategoryName.basics, icon: faStairs },
-    { title: CategoryName.reactJS, icon: faReact },
-    { title: CategoryName.typescript, icon: faT },
-    { title: CategoryName.backEnd, icon: faServer },
-  ],
-};
 const ProjectArray = [
   netflixClone,
   kakaoClone,
@@ -51,13 +43,21 @@ const ProjectArray = [
   coinTracker,
   MomentumClone,
 ];
+const { items }: ICategoryBar = {
+  items: [
+    { title: CategoryName.basics, icon: faStairs },
+    { title: CategoryName.reactJS, icon: faReact },
+    { title: CategoryName.typescript, icon: faT },
+    { title: CategoryName.backEnd, icon: faServer },
+  ],
+};
 function ProjectScreen() {
-  // Use Recoil
-  const AllMatch = useRouteMatch("/projects");
-  const BasicsMatch = useRouteMatch("/projects/Basics");
-  const ReactJSMatch = useRouteMatch("/projects/ReactJS");
-  const TypeScriptMatch = useRouteMatch("/projects/TypeScript");
-  const BackEndMatch = useRouteMatch("/projects/Back-end");
+  const AllMatch = useRouteMatch(`/projects`);
+  const BasicsMatch = useRouteMatch(`/projects/${items[0].title}`);
+  const ReactJSMatch = useRouteMatch(`/projects/${items[1].title}`);
+  const TypeScriptMatch = useRouteMatch(`/projects/${items[2].title}`);
+  const BackEndMatch = useRouteMatch(`/projects/${items[3].title}`);
+  // Send route matching information in items prop of Category
   let RouteArray = new Array<Iproject>();
   function MatchRouteArray(RouteMatch: any | null) {
     RouteArray = [];
@@ -67,6 +67,12 @@ function ProjectScreen() {
           (cat) =>
             cat === RouteMatch?.path.slice(10) && RouteArray.push(project)
         )
+      );
+      items.map((item) => (item.routeMatch = null));
+      items.map(
+        (item) =>
+          item.title === RouteMatch?.path.slice(10) &&
+          (item.routeMatch = RouteMatch)
       );
     }
   }
@@ -86,7 +92,6 @@ function ProjectScreen() {
   if (BackEndMatch) {
     MatchRouteArray(BackEndMatch);
   }
-  console.log(RouteArray);
 
   // <Item>
   //     <Link to="/">Home {homeMatch?.isExact && <Circle layoutId="circle" />}</Link> //정확하게 "/"일때만 Circle 나타남 (/포함된 router면 항상 true이기 때문)
@@ -101,7 +106,6 @@ function ProjectScreen() {
       <Nav />
       <Background>
         <CategoryBar items={items} />
-        {/* {tvMatch && <Circle layoutId="circle" />} */}
         <ProjectWrapper>
           {RouteArray.map((project) => (
             <Project project={project} />
