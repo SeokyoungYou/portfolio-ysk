@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Iproject } from "../ProjectData";
+import { Iproject } from "../datas/ProjectData";
 import { faAngleRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";

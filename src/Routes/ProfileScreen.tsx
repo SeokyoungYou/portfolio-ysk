@@ -9,13 +9,13 @@ const Background = styled.div`
   justify-content: center;
 `;
 
-function Home() {
+function ProfileScreen() {
   return (
     <>
       <Nav />
-      <Background>My Vision</Background>
+      <Background>My Profile</Background>
     </>
   );
 }
 
-export default Home;
+export default ProfileScreen;

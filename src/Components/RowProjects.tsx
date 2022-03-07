@@ -1,7 +1,7 @@
 // Two projects in row #Since 220304
 import styled from "styled-components";
 import Project from "./Project";
-import { Iproject } from "../ProjectData";
+import { Iproject } from "../datas/ProjectData";
 
 const Wrapper = styled.div`
   width: 100%;

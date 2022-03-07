@@ -22,7 +22,7 @@ import {
   netflixClone,
   trelloClone,
   youtubeClone,
-} from "../ProjectData";
+} from "../datas/ProjectData";
 import { useRouteMatch } from "react-router-dom";
 import Project from "../Components/Project";
 

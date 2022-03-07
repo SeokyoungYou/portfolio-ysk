@@ -9,13 +9,13 @@ const Background = styled.div`
   justify-content: center;
 `;
 
-function Home() {
+function Init() {
   return (
     <>
       <Nav />
-      <Background>My Vision</Background>
+      <Background></Background>
     </>
   );
 }
 
-export default Home;
+export default Init;

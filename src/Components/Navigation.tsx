@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion, useAnimation, useViewportScroll } from "framer-motion";
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faApple } from "@fortawesome/free-brands-svg-icons";
 
 const NavBar = styled(motion.div)`
   width: 100%;
@@ -26,7 +28,9 @@ function Nav() {
   return (
     <NavBar>
       <Item>
-        <Link to={"/"}>Home</Link>
+        <Link to={"/"}>
+          <FontAwesomeIcon icon={faApple} size="lg" />
+        </Link>
       </Item>
       <Item>
         <Link to={"/projects"}>Projects</Link>
