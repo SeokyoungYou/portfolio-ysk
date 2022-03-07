@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
 const CategoryIcons = styled(motion.div)`
   background-color: ${(props) => props.theme.backgroundColor.grey};
@@ -42,6 +42,13 @@ const CategoryScript = styled(motion.div)`
   font-size: 12px;
   transform-origin: top;
   z-index: 0;
+`;
+
+const Circle = styled(motion.div)`
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.orange};
 `;
 const CategoriesVariants = {
   initial: {
