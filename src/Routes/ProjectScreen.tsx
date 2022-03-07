@@ -57,57 +57,53 @@ function ProjectScreen() {
   const ReactJSMatch = useRouteMatch(`/projects/${items[1].title}`);
   const TypeScriptMatch = useRouteMatch(`/projects/${items[2].title}`);
   const BackEndMatch = useRouteMatch(`/projects/${items[3].title}`);
-  // Send route matching information in items prop of Category
-  let RouteArray = new Array<Iproject>();
-  function MatchRouteArray(RouteMatch: any | null) {
-    RouteArray = [];
+  const RouteMatchArray = [
+    AllMatch,
+    BasicsMatch,
+    ReactJSMatch,
+    TypeScriptMatch,
+    BackEndMatch,
+  ];
+  let ProjectRouteArray = new Array<Iproject>();
+  function matchDot(RouteMatch: any) {
+    items.map(
+      (item) =>
+        item.title === RouteMatch?.path.slice(10) &&
+        (item.routeMatch = RouteMatch)
+    );
+  }
+  function matchCategoryURL(RouteMatch: any) {
+    ProjectArray.map((project) =>
+      project.categories.map(
+        (cat) =>
+          cat === RouteMatch?.path.slice(10) && ProjectRouteArray.push(project)
+      )
+    );
+  }
+  function matchProjectRouteArray(RouteMatch: any) {
+    ProjectRouteArray = [];
+    items.map((item) => (item.routeMatch = null));
+    if (RouteMatch?.path === "/projects") {
+      ProjectRouteArray = ProjectArray;
+      return;
+    }
     if (RouteMatch?.isExact) {
-      ProjectArray.map((project) =>
-        project.categories.map(
-          (cat) =>
-            cat === RouteMatch?.path.slice(10) && RouteArray.push(project)
-        )
-      );
-      items.map((item) => (item.routeMatch = null));
-      items.map(
-        (item) =>
-          item.title === RouteMatch?.path.slice(10) &&
-          (item.routeMatch = RouteMatch)
-      );
+      matchCategoryURL(RouteMatch);
+      matchDot(RouteMatch); // Send route matching information in items prop of Category
     }
   }
-  if (AllMatch) {
-    RouteArray = [];
-    RouteArray = ProjectArray;
-  }
-  if (BasicsMatch) {
-    MatchRouteArray(BasicsMatch);
-  }
-  if (ReactJSMatch) {
-    MatchRouteArray(ReactJSMatch);
-  }
-  if (TypeScriptMatch) {
-    MatchRouteArray(TypeScriptMatch);
-  }
-  if (BackEndMatch) {
-    MatchRouteArray(BackEndMatch);
-  }
-
-  // <Item>
-  //     <Link to="/">Home {homeMatch?.isExact && <Circle layoutId="circle" />}</Link> //정확하게 "/"일때만 Circle 나타남 (/포함된 router면 항상 true이기 때문)
-  //   </Item>
-  //   <Item>
-  //     <Link to="/tv">Tv Shows {tvMatch && <Circle layoutId="circle" />}</Link> //true이면 Circle 나타남
-  //   </Item>
-  //RowProject 묶기 -> 클론 이름 array로 만들어서 [].?=()> 함수식 사용하기
-
   return (
     <>
       <Nav />
       <Background>
         <CategoryBar items={items} />
         <ProjectWrapper>
-          {RouteArray.map((project) => (
+          {/* Change ProjectRouteArray by matching route and category  */}
+          {RouteMatchArray.map((RouteMatch) =>
+            RouteMatch ? matchProjectRouteArray(RouteMatch) : null
+          )}
+          {/* Render projects */}
+          {ProjectRouteArray.map((project) => (
             <Project project={project} />
           ))}
         </ProjectWrapper>

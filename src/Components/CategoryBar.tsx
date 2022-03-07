@@ -39,7 +39,7 @@ const CategoryScript = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20px;
+  height: 25px;
   font-size: 12px;
   transform-origin: top;
   z-index: 0;

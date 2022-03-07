@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 
 const Wrapper = styled(motion.div)`
-  height: 100vh;
+  height: 600px;
   margin: 10px 0px;
   background-color: ${(props) => props.theme.white.lighter};
   border-radius: 15px;
@@ -42,7 +42,7 @@ const Info = styled.div`
   height: 20px;
   align-items: center;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
 `;
 const InfoTitle = styled.h3`
   margin-right: 10px;
