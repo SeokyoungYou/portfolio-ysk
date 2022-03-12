@@ -10,14 +10,14 @@ const NavBar = styled(motion.div)`
   height: 50px;
   display: flex;
   align-items: center;
-  padding: 0px 10px;
+  padding: 0px 20px;
   background-color: ${(props) => props.theme.navColor};
 `;
 
 const Item = styled.div`
   color: rgba(214, 214, 214, 1);
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 30px;
   font-size: 14px;
   :hover {
     color: white;

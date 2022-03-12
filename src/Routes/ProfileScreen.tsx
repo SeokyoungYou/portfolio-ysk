@@ -8,7 +8,7 @@ const Background = styled.div`
   flex-direction: column;
   justify-content: center;
 `;
-
+// support cat으로 만들것
 function ProfileScreen() {
   return (
     <>
