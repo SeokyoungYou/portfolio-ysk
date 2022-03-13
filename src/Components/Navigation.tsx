@@ -15,15 +15,14 @@ const NavBar = styled(motion.div)`
 `;
 
 const Item = styled.div`
-  color: rgba(214, 214, 214, 1);
+  color: #e7e7e7;
   cursor: pointer;
   margin-right: 30px;
   font-size: 14px;
-  :hover {
+  &:hover {
     color: white;
   }
 `;
-
 function Nav() {
   return (
     <NavBar>

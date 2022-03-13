@@ -31,7 +31,7 @@ const Category = styled.div`
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  :hover {
+  &:hover {
     color: ${(props) => props.theme.blue};
   }
 `;
