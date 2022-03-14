@@ -4,7 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import styled from "styled-components";
 import Nav from "../Components/Navigation";
-
+import Slider from "../Components/Slider";
+import { SliderProgrammingExp } from "../datas/homeData";
 const Background = styled.div`
   background-color: ${(props) => props.theme.backgroundColor.grey};
   width: 100%;
@@ -21,76 +22,16 @@ const Typo = styled(motion.div)`
   justify-content: center;
 `;
 const TypoTitle = styled(motion.h1)`
-  font-size: 10vw;
+  font-size: 9vw;
   font-weight: 900;
 `;
 const TypoContents = styled(motion.p)`
-  font-size: 2vw;
+  font-size: 1.4vw;
   font-weight: 600;
-  padding: 20px 13vw;
+  padding: 20px 14vw;
   color: ${(props) => props.theme.black.grey};
 `;
-const Slider = styled.div`
-  height: 350px;
-  width: 100%;
-  margin-bottom: 70px;
-  /* padding-left: 5%; */
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-`;
-const SliderTitle = styled.div`
-  margin-bottom: 20px;
-  width: 90%;
-  span {
-    font-size: 24px;
-    font-weight: 600;
-    margin-right: 5px;
-    &:nth-child(2) {
-      color: ${(props) => props.theme.black.grey};
-    }
-  }
-`;
-const SliderContents = styled(motion.div)`
-  height: 75%;
-  width: 90%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-  position: absolute;
-  top: 10%;
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* gap: 10px; */
-`;
-const SliderContent = styled(motion.div)`
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  margin-right: 20px;
-  background-color: ${(props) => props.theme.white.lighter};
-`;
-const SliderBtns = styled.div`
-  /* position: absolute; */
-  right: 50%;
-  bottom: 0;
-`;
-const SliderBtn = styled.button`
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
-  border-radius: 15px;
-  border-style: 0.5px black;
-  margin-left: 10px;
-  padding-top: 2px;
-  margin-top: 8px;
-  cursor: pointer;
-  :hover {
-    background-color: black;
-    color: white;
-  }
-`;
+
 const TypoVariants = {
   start: {},
   end: {
@@ -112,45 +53,8 @@ const TypoChildVariants = {
     },
   },
 };
-const SliderContentsVariants = {
-  hidden: (back: boolean) => ({
-    x: back ? -window.outerWidth - 5 : window.outerWidth + 5,
-  }),
 
-  visible: (back: boolean) => ({
-    x: 0,
-  }),
-  exit: (back: boolean) => ({
-    x: back ? window.outerWidth + 5 : -window.outerWidth - 5,
-  }),
-};
-export const data = [1, 2, 3, 4, 5, 6];
-const offset = 4;
 function Home() {
-  const [leaving, setLeaving] = useState(false); //leaving state 만들고
-  const [index, setIndex] = useState(0);
-  const [back, setBack] = useState(false);
-  const toggleLeaving = () => setLeaving((prev) => !prev);
-  const nextBtnClicked = () => {
-    if (data) {
-      if (leaving) return;
-      setBack(false);
-      toggleLeaving();
-      const totalData = data.length - 1; //except banner movie
-      const maxIndex = Math.floor(totalData / offset);
-      setIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
-    }
-  };
-  const prevBtnClicked = () => {
-    if (data) {
-      if (leaving) return;
-      setBack(true);
-      toggleLeaving();
-      const totalData = data.length - 1; //except banner movie
-      const maxIndex = Math.floor(totalData / offset);
-      setIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
-    }
-  };
   return (
     <>
       <Nav />
@@ -165,49 +69,14 @@ function Home() {
             싶습니다.ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
           </TypoContents>
         </Typo>
-        {/* 포지션 역량 */}
-        <Slider>
-          <SliderTitle>
-            <span>프로그래밍 경험.</span>
-            <span>웹 프론트엔드 개발자 선택 계기.</span>
-          </SliderTitle>
-          <AnimatePresence
-            initial={false}
-            custom={back}
-            onExitComplete={toggleLeaving}
-          >
-            <SliderContents
-              custom={back}
-              key={index}
-              variants={SliderContentsVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              transition={{ type: "tween", duration: 1 }}
-            >
-              {data
-                ?.slice(offset * index, offset * index + offset)
-                .map((content) => (
-                  <SliderContent>hellooo</SliderContent>
-                ))}
-            </SliderContents>
-            <SliderBtns>
-              <SliderBtn onClick={prevBtnClicked}>
-                <FontAwesomeIcon icon={faAngleLeft} />
-              </SliderBtn>
-              <SliderBtn onClick={nextBtnClicked}>
-                <FontAwesomeIcon icon={faAngleRight} />
-              </SliderBtn>
-            </SliderBtns>
-          </AnimatePresence>
-        </Slider>
+        <Slider slider={SliderProgrammingExp} />
       </Background>
     </>
   );
 }
 
 // 인생의 prgress bar를 만들어보기
-// CS: 아두이노 -> low level code -> 파이썬(그래프, 데이터 엔지니어?) ->  웾 프론트엔드
+// CS: 아두이노 -> low level code: LCD 만든게 프론트 백엔드 다 한거였네 ㅎ -> 파이썬(그래프, 데이터 엔지니어?) ->  웾 프론트엔드
 // 커리어: 항공 -> 기계 -> 연구/석사 -> 개발자
 // 아헨에서 디자이너들과 협업
 // 취향
