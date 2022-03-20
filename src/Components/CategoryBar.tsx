@@ -22,7 +22,7 @@ const Categories = styled(motion.div)`
   align-items: center;
   justify-content: center;
   gap: 40px;
-  z-index: 99;
+  z-index: 1;
 `;
 const Category = styled.div`
   height: 90px;

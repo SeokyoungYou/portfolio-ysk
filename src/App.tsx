@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Nav from "./Components/Navigation";
 import Home from "./Routes/Home";
 import ProfileScreen from "./Routes/ProfileScreen";
 import ProjectScreen from "./Routes/ProjectScreen";
@@ -7,6 +8,7 @@ import ProjectScreen from "./Routes/ProjectScreen";
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Nav />
       <Switch>
         <Route path="/profile">
           <ProfileScreen />

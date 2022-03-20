@@ -7,7 +7,7 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 const SliderWrapper = styled.div`
   height: 350px;
   width: 100%;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   /* padding-left: 5%; */
   position: relative;
   display: flex;
@@ -16,7 +16,6 @@ const SliderWrapper = styled.div`
   justify-content: space-between;
 `;
 const SliderTitle = styled.div`
-  margin-bottom: 20px;
   width: 90%;
   span {
     font-size: 24px;
@@ -31,10 +30,10 @@ const SliderContents = styled(motion.div)`
   height: 75%;
   width: 90%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   position: absolute;
-  top: 10%;
+  top: 13%;
   /* grid-template-columns: repeat(3, 1fr); */
   /* gap: 10px; */
 `;
@@ -87,8 +86,7 @@ const SliderContentsVariants = {
   }),
 };
 
-export const data = [1, 2, 3, 4, 5, 6];
-const offset = 4;
+const offset = 3;
 interface ISliderComponent {
   slider: ISlider;
 }
@@ -98,21 +96,21 @@ function Slider({ slider }: ISliderComponent) {
   const [back, setBack] = useState(false);
   const toggleLeaving = () => setLeaving((prev) => !prev);
   const nextBtnClicked = () => {
-    if (data) {
+    if (slider.contents) {
       if (leaving) return;
       setBack(false);
       toggleLeaving();
-      const totalData = data.length - 1; //except banner movie
+      const totalData = slider.contents.length - 1; //except banner movie
       const maxIndex = Math.floor(totalData / offset);
       setIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
     }
   };
   const prevBtnClicked = () => {
-    if (data) {
+    if (slider.contents) {
       if (leaving) return;
       setBack(true);
       toggleLeaving();
-      const totalData = data.length - 1; //except banner movie
+      const totalData = slider.contents.length - 1; //except banner movie
       const maxIndex = Math.floor(totalData / offset);
       setIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
     }

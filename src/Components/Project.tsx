@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Iproject } from "../datas/ProjectData";
-import { faAngleRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Wrapper = styled(motion.div)`
   height: 600px;
@@ -128,8 +128,8 @@ function Project({ project }: IProjectComponent) {
               <InfoText key={keyword}>{keyword}</InfoText>
             ))}
           </Info>
-          <Info>API: data에 있으면...</Info>
-          <Info>설명</Info>
+          {/* <Info>API: data에 있으면...</Info>
+          <Info>설명</Info> */}
         </Infos>
         <Btns>
           <Btn>
@@ -137,11 +137,11 @@ function Project({ project }: IProjectComponent) {
               Code <FontAwesomeIcon icon={faAngleRight} />
             </a>
           </Btn>
-          <Btn>
+          {/* <Btn>
             <a href={project.depolyedWebsite} target="_blank">
               ScreenShots <FontAwesomeIcon icon={faAngleRight} />
             </a>
-          </Btn>
+          </Btn> */}
           <Btn>
             <a href={project.depolyedWebsite} target="_blank">
               Website <FontAwesomeIcon icon={faAngleRight} />

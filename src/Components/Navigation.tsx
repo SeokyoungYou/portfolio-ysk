@@ -11,6 +11,9 @@ const NavBar = styled(motion.div)`
   display: flex;
   align-items: center;
   padding: 0px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
   background-color: ${(props) => props.theme.navColor};
 `;
 
