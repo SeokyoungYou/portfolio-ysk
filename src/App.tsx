@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Nav from "./Components/Navigation";
 import Home from "./Routes/Home";
@@ -8,6 +9,9 @@ import ProjectScreen from "./Routes/ProjectScreen";
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Helmet>
+        <title>Seokyoung You</title>
+      </Helmet>
       <Nav />
       <Switch>
         <Route path="/profile">

@@ -10,6 +10,7 @@ const NavBar = styled(motion.div)`
   height: 50px;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0px 20px;
   position: fixed;
   top: 0;

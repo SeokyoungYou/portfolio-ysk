@@ -49,7 +49,7 @@ const SliderContent = styled(motion.div)`
   /* justify-content: space-around; */
 `;
 const SliderImg = styled.img`
-  width: 30%;
+  height: 60px;
 `;
 const SliderContentTitle = styled.h1``;
 const SliderContentDescription = styled.p``;
@@ -139,7 +139,13 @@ function Slider({ slider }: ISliderComponent) {
             .slice(offset * index, offset * index + offset)
             .map((content) => (
               <SliderContent>
-                <SliderImg src={content.img} />
+                <SliderImg
+                  src={content.img}
+                  // style={{
+                  //   backgroundSize: "cover",
+                  //   backgroundPosition: "center",
+                  // }}
+                />
                 <SliderContentTitle>{content.title}</SliderContentTitle>
                 <SliderContentDescription>
                   {content.description}
