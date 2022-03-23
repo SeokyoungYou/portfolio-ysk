@@ -8,6 +8,10 @@ export interface ISliderContent {
   title: string;
   description: string;
 }
+export interface IGrid {
+  title: string;
+  img: string;
+}
 
 let Arduino: ISliderContent = {
   img: `${process.env.PUBLIC_URL}/HomePic/Arduino_Logo.svg`,
@@ -35,15 +39,42 @@ export let SliderProgrammingExp: ISlider = {
   contents: [Arduino, LCDPanel, Mnist, Web],
 };
 //
-let ReactJS: ISliderContent = {
-  img: `${process.env.PUBLIC_URL}/HomePic/Arduino_Logo.svg`,
+let ReactJS: IGrid = {
+  img: `${process.env.PUBLIC_URL}/HomePic/react.svg`,
   title: "React",
-  description: "React",
+};
+let toolCSS: IGrid = {
+  img: `${process.env.PUBLIC_URL}/HomePic/css.svg`,
+  title: "CSS",
+};
+let Git: IGrid = {
+  img: `${process.env.PUBLIC_URL}/HomePic/git.svg`,
+  title: "Git",
+};
+let toolHTML: IGrid = {
+  img: `${process.env.PUBLIC_URL}/HomePic/html.svg`,
+  title: "HTML",
+};
+let toolJS: IGrid = {
+  img: `${process.env.PUBLIC_URL}/HomePic/javascript.svg`,
+  title: "Javascript",
+};
+let sass: IGrid = {
+  img: `${process.env.PUBLIC_URL}/HomePic/sass.svg`,
+  title: "Sass",
+};
+let vsCode: IGrid = {
+  img: `${process.env.PUBLIC_URL}/HomePic/vscode.svg`,
+  title: "VS Code",
+};
+let styledComp: IGrid = {
+  img: `${process.env.PUBLIC_URL}/HomePic/styled-component.png`,
+  title: "Styled-component",
 };
 export let SliderFrontendExp: ISlider = {
   title1: "프론트 엔드.",
   title2: "사용할 수 있는 툴.",
-  contents: [ReactJS],
+  contents: [ReactJS, toolCSS, Git, toolHTML, toolJS, sass, vsCode, styledComp],
 };
 //
 let Aachen: ISliderContent = {

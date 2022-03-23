@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import ImageGrid from "../Components/ImageGrid";
 import Nav from "../Components/Navigation";
 import Slider from "../Components/Slider";
 import {
@@ -40,6 +41,31 @@ const TypoContents = styled(motion.p)`
   font-weight: 600;
   padding: 20px 14vw;
   color: ${(props) => props.theme.black.grey};
+`;
+const Wrapper = styled.div`
+  /* height: 350px; */
+  width: 100%;
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`;
+const Titles = styled.div`
+  width: 90%;
+  margin-bottom: 15px;
+  span {
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 5px;
+    &:nth-child(2) {
+      color: ${(props) => props.theme.black.grey};
+    }
+  }
+`;
+const GridWrapper = styled.div`
+  width: 90%;
 `;
 
 const TypoVariants = {
@@ -80,8 +106,18 @@ function Home() {
         </TypoContents>
       </Typo>
       <Slider slider={SliderProgrammingExp} />
-      <Slider slider={SliderFrontendExp} />
-      {/* ImgGrid로 변경할 것 */}
+      {/* <Slider slider={SliderFrontendExp} /> */}
+      {/* ImgGridWrapper로 변경할 것 */}
+      <Wrapper>
+        <Titles>
+          <span>{SliderFrontendExp.title1}</span>
+          <span>{SliderFrontendExp.title2}</span>
+        </Titles>
+        <GridWrapper>
+          <ImageGrid slider={SliderFrontendExp} />
+        </GridWrapper>
+      </Wrapper>
+
       <Slider slider={SliderTeamprojectExp} />
     </Background>
   );
