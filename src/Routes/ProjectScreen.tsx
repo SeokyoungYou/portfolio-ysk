@@ -8,6 +8,7 @@ import {
   faT,
   faDiagramProject,
   faA,
+  faPeopleArrowsLeftRight,
 } from "@fortawesome/free-solid-svg-icons";
 import {} from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,6 +16,7 @@ import { faReact } from "@fortawesome/free-brands-svg-icons";
 import {
   CategoryName,
   coinTracker,
+  DDobok,
   Iproject,
   kakaoClone,
   MomentumClone,
@@ -37,6 +39,7 @@ const ProjectWrapper = styled.div`
   padding: 20px 30px;
 `;
 const ProjectArray = [
+  DDobok,
   netflixClone,
   kakaoClone,
   youtubeClone,
@@ -49,6 +52,7 @@ const { items }: ICategoryBar = {
     { title: CategoryName.reactJS, icon: faReact },
     { title: CategoryName.typescript, icon: faT },
     { title: CategoryName.backEnd, icon: faServer },
+    { title: CategoryName.collaboration, icon: faPeopleArrowsLeftRight },
   ],
 };
 function ProjectScreen() {
@@ -57,12 +61,14 @@ function ProjectScreen() {
   const ReactJSMatch = useRouteMatch(`/projects/${items[1].title}`);
   const TypeScriptMatch = useRouteMatch(`/projects/${items[2].title}`);
   const BackEndMatch = useRouteMatch(`/projects/${items[3].title}`);
+  const CollaborationMatch = useRouteMatch(`/projects/${items[4].title}`);
   const RouteMatchArray = [
     AllMatch,
     BasicsMatch,
     ReactJSMatch,
     TypeScriptMatch,
     BackEndMatch,
+    CollaborationMatch,
   ];
   let ProjectRouteArray = new Array<Iproject>();
   function matchDot(RouteMatch: any) {

@@ -98,16 +98,17 @@ export const CategoryName = {
   typescript: "TypeScript",
   backEnd: "Back-end",
   publish: "Publish",
+  collaboration: "Collaboration",
 };
 
 export interface Ilecture {
-  lecture: string;
+  lecture?: string;
   theory: string[];
   packages: string[];
 }
 export interface Iproject {
   title: string;
-  lecture: Ilecture;
+  lecture?: Ilecture;
   releaseDate: string;
   categories: string[];
   keywords?: string[];
@@ -272,4 +273,16 @@ export let netflixClone: Iproject = {
   keywords: ["Animations", "Sliders", "Modals"],
   depolyedWebsite: "https://seokyoungyou.github.io/nomflix-clone",
   githubRepo: "https://github.com/SeokyoungYou/nomflix-clone",
+};
+export let DDobok: Iproject = {
+  title: "DDobok",
+  releaseDate: "2022-04",
+  categories: [
+    CategoryName.reactJS,
+    CategoryName.typescript,
+    CategoryName.collaboration,
+  ],
+  keywords: ["Django Collaborate", "Media Query", "Data Fetching"],
+  depolyedWebsite: "https://github.com/eakyoungyu/JiujitsuGi",
+  githubRepo: "https://github.com/eakyoungyu/JiujitsuGi",
 };
