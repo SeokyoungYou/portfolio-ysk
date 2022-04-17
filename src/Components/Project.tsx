@@ -5,16 +5,22 @@ import { motion } from "framer-motion";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Wrapper = styled(motion.div)`
+  width: 800px;
   height: 600px;
   margin: 10px 0px;
   background-color: ${(props) => props.theme.white.lighter};
   border-radius: 15px;
+  margin-bottom: 30px;
   /* &:first-child {
     transform-origin: center left;
   }
   &:last-child {
     transform-origin: center right;
   } */
+  @media only screen and (max-width: 860px) {
+    width: 88vw;
+    height: 400px;
+  }
 `;
 const Thumbnail = styled(motion.div)`
   height: 50%;
@@ -105,7 +111,7 @@ function Project({ project }: IProjectComponent) {
         variants={ThumnailVariants}
         style={{
           background: `linear-gradient(to top, rgba(0,0,0,0.7), transparent), url('${process.env.PUBLIC_URL}/Thumbnails/${project.title}.PNG')`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "center",
         }}
       >

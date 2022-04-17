@@ -11,6 +11,9 @@ const CategoryIcons = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
+  @media only screen and (max-width: 860px) {
+    font-size: 5px;
+  }
 `;
 
 const Categories = styled(motion.div)`
@@ -23,6 +26,10 @@ const Categories = styled(motion.div)`
   justify-content: center;
   gap: 40px;
   z-index: 1;
+  @media only screen and (max-width: 860px) {
+    gap: 13px;
+    padding: 0px 10px;
+  }
 `;
 const Category = styled.div`
   height: 90px;

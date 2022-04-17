@@ -34,9 +34,14 @@ const Background = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 const ProjectWrapper = styled.div`
   padding: 20px 30px;
+  /* @media only screen and (max-width: 860px) {
+    width: 100%;
+    padding: 0px;
+  } */
 `;
 const ProjectArray = [
   DDobok,
