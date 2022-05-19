@@ -9,6 +9,7 @@ const CategoryIcons = styled(motion.div)`
   font-size: 12px;
   display: flex;
   flex-direction: column;
+  width: 100%;
   align-items: center;
   /* justify-content: center; */
   @media only screen and (max-width: 860px) {
@@ -47,6 +48,7 @@ const CategoryScript = styled(motion.div)`
   align-items: center;
   justify-content: center;
   height: 25px;
+  width: 100%;
   font-size: 12px;
   transform-origin: top;
   z-index: 0;

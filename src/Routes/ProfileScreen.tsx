@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Nav from "../Components/Navigation";
 
 const Background = styled.div`
-  background-color: ${(props) => props.theme.backgroundColor.grey};
   width: 100%;
   margin-top: 50px;
   display: flex;
@@ -17,12 +16,7 @@ const ProfileImg = styled.div`
   font-size: 4vh;
   font-weight: 700;
 `;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+
 const ImgGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -34,8 +28,20 @@ const ImgContent = styled.img`
   height: 50px;
 `;
 const ImgTitle = styled.h2``;
-
-const Title = styled.h1``;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+`;
+const Title = styled.h1`
+  margin-bottom: 5px;
+`;
+const Content = styled.h1``;
+const LinkContent = styled.a`
+  color: ${(props) => props.theme.blue};
+`;
 function ProfileScreen() {
   return (
     <Background>
@@ -50,13 +56,20 @@ function ProfileScreen() {
       </ProfileImg>
       <Wrapper>
         <Title>Contact</Title>
+        <Content>seo9802@naver.com</Content>
       </Wrapper>
       <Wrapper>
+        <Title>Github</Title>
+        <LinkContent href="https://github.com/SeokyoungYou">
+          https://github.com/SeokyoungYou
+        </LinkContent>
+      </Wrapper>
+      {/* <Wrapper>
         <Title>Education</Title>
-      </Wrapper>
-      <Wrapper>
-        <Title>What I love</Title>
-        <ImgGrid>
+      </Wrapper> */}
+      {/* <Wrapper> */}
+      {/* <Title>What I love</Title> */}
+      {/* <ImgGrid>
           <ImgItem>
             <ImgContent
               src={`${process.env.PUBLIC_URL}/ProfilePic/Guitar.jpg`}
@@ -93,8 +106,8 @@ function ProfileScreen() {
             />
             <ImgTitle>Guitar</ImgTitle>
           </ImgItem>
-        </ImgGrid>
-      </Wrapper>
+        </ImgGrid> */}
+      {/* </Wrapper> */}
     </Background>
   );
 }

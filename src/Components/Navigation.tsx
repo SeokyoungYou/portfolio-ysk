@@ -39,7 +39,7 @@ function Nav() {
         <Link to={"/projects"}>Projects</Link>
       </Item>
       <Item>
-        <Link to={"/profile"}>Profile</Link>
+        <Link to={"/aboutme"}>About me</Link>
       </Item>
     </NavBar>
   );

@@ -276,13 +276,13 @@ export let netflixClone: Iproject = {
 };
 export let DDobok: Iproject = {
   title: "DDobok",
-  releaseDate: "2022-04",
+  releaseDate: "Ongoing",
   categories: [
     CategoryName.reactJS,
     CategoryName.typescript,
     CategoryName.collaboration,
   ],
   keywords: ["Django Collaborate", "Media Query", "Data Fetching"],
-  depolyedWebsite: "https://github.com/eakyoungyu/JiujitsuGi",
+  depolyedWebsite: "http://43.200.15.2/",
   githubRepo: "https://github.com/eakyoungyu/JiujitsuGi",
 };

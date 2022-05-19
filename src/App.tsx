@@ -14,7 +14,7 @@ function App() {
       </Helmet>
       <Nav />
       <Switch>
-        <Route path="/profile">
+        <Route path="/aboutme">
           <ProfileScreen />
         </Route>
         <Route path={["/projects", "/projects/:projectTitle"]}>

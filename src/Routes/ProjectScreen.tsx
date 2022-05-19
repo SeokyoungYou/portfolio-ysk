@@ -38,6 +38,12 @@ const Background = styled.div`
 `;
 const ProjectWrapper = styled.div`
   padding: 20px 30px;
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, auto-fill);
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+  justify-items: center; */
   /* @media only screen and (max-width: 860px) {
     width: 100%;
     padding: 0px;

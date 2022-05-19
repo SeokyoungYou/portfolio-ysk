@@ -97,15 +97,15 @@ function Home() {
       <Typo variants={TypoVariants} initial="start" animate="end">
         <TypoTitle variants={TypoChildVariants}>Code what I love.</TypoTitle>
         <TypoContents variants={TypoChildVariants}>
-          안녕하세요. 좋아하는 것들을 구현해나가고 있는 개발자 유서경입니다.
-          실재하는 감각과 물리 법칙을 활용하여 3차원 디바이스를 설계하는
-          기계공학 엔지니어에서, 물리적 제약이 적은 가상의 평면에서 많은
-          사람들이 쉽게 경험할 수 있는 서비스를 창작하는 개발자가. 이 웹사이트는
-          애플 클론코딩.
-          ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+          안녕하세요. 좋아하는 것들을 구현해나가고 있는 프론트엔드 개발자
+          유서경입니다. 실재하는 감각을 통해 구동하는 디바이스를 설계하는
+          기계공학 엔지니어에서, 가상의 평면에서 많은 사람들이 경험할 수 있는
+          서비스를 창작하는 웹 개발자가 되는 과정을 지나가고 있습니다. 이
+          웹사이트는 애플(Apple)의 홈페이지를 참조하여 디자인하였으며 ReactJS,
+          Typescript, 그리고 Styled-component를 사용하여 개발되었습니다.
         </TypoContents>
       </Typo>
-      <Slider slider={SliderProgrammingExp} />
+      {/* <Slider slider={SliderProgrammingExp} /> */}
       {/* <Slider slider={SliderFrontendExp} /> */}
       {/* ImgGridWrapper로 변경할 것 */}
       <Wrapper>
@@ -118,7 +118,7 @@ function Home() {
         </GridWrapper>
       </Wrapper>
 
-      <Slider slider={SliderTeamprojectExp} />
+      {/* <Slider slider={SliderTeamprojectExp} /> */}
     </Background>
   );
 }
