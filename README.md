@@ -1,14 +1,8 @@
-# React Masterclass
-
-Learn and dominate the React ecosystem once and for all.
+# My portfolio
 
 ### Using:
 
+- React
 - Styled Components
-- Recoil
-- React Query
-- React Router DOM
-- Apex Charts
-- React Spring
 - Typescript
-- Firebase
+
